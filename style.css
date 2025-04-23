@@ -1,0 +1,227 @@
+/* /////////////////////////////////// Things /////////////////////////////////////////// */
+
+@font-face {
+  font-family: Inter;
+  src: url("assets/fonts/Inter-VariableFont_slnt,wght.ttf");
+}
+
+:root {
+  --base-color: #ffffff;
+  --base-variant: #d9ebd9;
+  --main-color: #1a8b66;
+  --darker-main-color: #12664a;
+  --text-color: #000000;
+  --red: #b02b2b;
+  --orange: #b06d2b;
+  --blue: #2b67b0;
+  --violet: #622bb0;
+}
+
+.darkmode {
+  --base-color: #141414;
+  --base-variant: #1f1f1f;
+  --main-color: #1a8b66;
+  --darker-main-color: #12664a;
+  --text-color: #e4e4e4;
+}
+
+#link {
+  background-color: var(--base-variant);
+  color: var(--text-color);
+  text-decoration: none;
+  font-size: small;
+  font-weight: bold;
+  padding: 15px;
+  border-radius: 10px;
+  &:hover {
+    background-color: var(--main-color);
+    color: var(--text-color);
+  }
+}
+/* /////////////////////////////////// Page /////////////////////////////////////////// */
+body {
+  overflow: hidden;
+  margin: 0px;
+  background-color: var(--base-color);
+  font-family: Inter;
+  transition: 0.8s;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+}
+
+/* /////////////////////////////////// Banner /////////////////////////////////////////// */
+
+.banner {
+  margin-top: 10px;
+  background-color: var(--base-variant);
+  color: aliceblue;
+  padding: 20px;
+  border-radius: 10px;
+  width: 60%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.banner-title {
+  width: 120px;
+  height: 50px;
+  background-color: var(--main-color);
+  border-radius: 10px;
+  text-shadow: rgb(255, 255, 255) 1px 0 10px;
+  text-align: center;
+  align-content: center;
+
+  &:hover {
+    background-color: var(--darker-main-color);
+    cursor: pointer;
+  }
+}
+/* /////////////////////////////////// Arrows /////////////////////////////////////////// */
+
+.arrow {
+  position: fixed;
+  display: flex;
+  color: var(--text-color);
+  background-color: #1a8b66;
+  border-radius: 10px;
+  width: 40px;
+  height: 40px;
+  justify-content: center;
+  align-items: center;
+  &:hover {
+    background-color: var(--darker-main-color);
+    cursor: pointer;
+  }
+}
+#arrow-left {
+  left: 25%;
+}
+#arrow-right {
+  right: 25%;
+}
+/* /////////////////////////////////// Cards /////////////////////////////////////////// */
+
+.container {
+  display: flex;
+  margin-top: 5%;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+}
+
+.card {
+  padding: 25px;
+  border-radius: 10px;
+  height: 550px;
+
+  animation-name: up;
+}
+/* ///////////////////////// Contacts ////////////////////////// */
+#contacts-card {
+  background-color: var(--red);
+  display: none;
+}
+.social {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+/* ///////////////////////// Passions ////////////////////////// */
+#passions-card {
+  background-color: var(--orange);
+  display: none;
+}
+/* ///////////////////////// Home ////////////////////////// */
+#home-card {
+  background-color: var(--base-variant);
+}
+
+#welcome {
+  color: var(--text-color);
+  &:hover {
+    cursor: pointer;
+  }
+}
+#my-name {
+  color: var(--text-color);
+}
+
+#my-title {
+  color: var(--main-color);
+  font-weight: bold;
+}
+#description {
+  color: var(--text-color);
+  margin-top: 50px;
+}
+
+/* ///////////////////////// Design ////////////////////////// */
+#design-card {
+  background-color: var(--blue);
+  display: none;
+}
+/* ///////////////////////// Development ////////////////////////// */
+#development-card {
+  background-color: var(--violet);
+  display: none;
+}
+/* /////////////////////////////////// Background /////////////////////////////////////////// */
+
+.fallingObject{
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  background-color: var(--text-color);
+  animation: falling linear forwards;
+}
+
+@keyframes falling {
+  0% 
+  {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0;
+  }
+  100% 
+  {
+    transform: translateY(100vh) rotate(360deg);
+    opacity: 1;
+  }
+}
+
+/* /////////////////////////////////// Theme /////////////////////////////////////////// */
+
+.theme-switch {
+  height: 50px;
+  width: 50px;
+  padding: 0;
+  border-radius: 50%;
+  background-color: var(--base-variant);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+
+  svg {
+    fill: var(--text-color);
+
+    &:last-child {
+      display: none;
+    }
+    .darkmode &:first-child {
+      display: none;
+    }
+    .darkmode &:last-child {
+      display: block;
+    }
+  }
+}
