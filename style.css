@@ -64,6 +64,7 @@ header {
   padding: 20px;
   border-radius: 10px;
   width: 60%;
+  height: 50px;
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -72,14 +73,18 @@ header {
 .banner-title {
   width: 120px;
   height: 50px;
-  background-color: var(--main-color);
+  background-color: var(--darker-main-color);
   border-radius: 10px;
   text-shadow: rgb(255, 255, 255) 1px 0 10px;
   text-align: center;
   align-content: center;
+  transition: 0.3s;
 
   &:hover {
-    background-color: var(--darker-main-color);
+    margin: 10px;
+    width: 130px;
+    height: 60px;
+    background-color: var(--main-color);
     cursor: pointer;
   }
 }
@@ -89,15 +94,19 @@ header {
   position: fixed;
   display: flex;
   color: var(--text-color);
-  background-color: #1a8b66;
+  background-color: var(--darker-main-color);
   border-radius: 10px;
   width: 40px;
   height: 40px;
   justify-content: center;
   align-items: center;
+  transition: 0.3s;
+
   &:hover {
-    background-color: var(--darker-main-color);
+    background-color: var(--main-color);
     cursor: pointer;
+    width: 50px;
+    height: 50px;
   }
 }
 #arrow-left {
@@ -110,7 +119,7 @@ header {
 
 .container {
   display: flex;
-  margin-top: 5%;
+  margin-top: 4%;
   align-items: center;
   justify-content: center;
   text-align: center;
@@ -121,6 +130,7 @@ header {
   padding: 25px;
   border-radius: 10px;
   height: 550px;
+  width: 370px;
 
   animation-name: up;
 }
@@ -145,8 +155,12 @@ header {
 }
 
 #welcome {
+  padding: 2px;
   color: var(--text-color);
+  transition: 0.3s;
   &:hover {
+    padding: 0px;
+    font-size: 35px;
     cursor: pointer;
   }
 }
@@ -175,7 +189,7 @@ header {
 }
 /* /////////////////////////////////// Background /////////////////////////////////////////// */
 
-.fallingObject{
+.fallingObject {
   z-index: -1;
   position: absolute;
   top: 0;
@@ -184,13 +198,11 @@ header {
 }
 
 @keyframes falling {
-  0% 
-  {
+  0% {
     transform: translateY(0) rotate(0deg);
     opacity: 0;
   }
-  100% 
-  {
+  100% {
     transform: translateY(100vh) rotate(360deg);
     opacity: 1;
   }
