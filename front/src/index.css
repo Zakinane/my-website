@@ -1,0 +1,82 @@
+@font-face {
+  font-family: "DarkSouls";
+  src: url("../assets/fonts/OptimusPrinceps.ttf");
+}
+body {
+  background-color: black;
+}
+
+:root {
+  /* --------------- FONTS --------------*/
+  --main-font: Garamond, serif;
+  --title-font: "DarkSouls", serif;
+
+  /* ------------- COLORS ----------------*/
+  /* Main */
+  --text-color: #ffffff;
+
+  /* fx */
+  --ink-starlight: orange;
+  --ink-starlight-2: #f08d4f;
+  --ink-starlight-3: #f70b0b;
+}
+
+/* 34 Starlight — a constellation shimmer twinkles across frosted letter faces */
+.fx-starlight {
+  letter-spacing: 0.12em;
+  color: transparent;
+  background:
+    radial-gradient(ellipse 3px 7px at 14% 35%, #f6c78e 0 45%, transparent 55%),
+    radial-gradient(ellipse 2.5px 5px at 42% 68%, #d8f45e 0 45%, transparent 55%),
+    radial-gradient(ellipse 3px 8px at 75% 24%, #fadc63 0 45%, transparent 55%),
+    linear-gradient(
+      100deg,
+      var(--ink-starlight),
+      var(--ink-starlight-3),
+      var(--ink-starlight)
+    );
+  background-size:
+    120px 60px,
+    150px 72px,
+    180px 68px,
+    240% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  filter: drop-shadow(
+    0 0 10px color-mix(in srgb, var(--ink-starlight-3) 45%, transparent)
+  );
+  animation: fx-starlight 10s alternate infinite;
+}
+@keyframes fx-starlight {
+  0% {
+    background-position:
+      0 0,
+      0 0,
+      0 0,
+      120% 0;
+  }
+  100% {
+    background-position:
+      120px 0,
+      -150px 0,
+      180px 0,
+      -120% 0;
+  }
+}
+
+p {
+  font-family: var(--main-font);
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--title-font);
+}
+
+a {
+  text-decoration: none;
+  color: unset;
+}

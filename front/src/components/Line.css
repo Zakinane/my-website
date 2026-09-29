@@ -1,0 +1,11 @@
+.Line {
+  width: var(--line-length);
+  height: 1px;
+  margin: 10px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    var(--line-color),
+    transparent
+  );
+}
