@@ -2,7 +2,7 @@
   background-image: url(../../assets/temp/Home-temp.jpg);
   background-repeat: no-repeat;
   background-position: center;
-  height: 80vh;
+  height: 100vh;
   top: -60px;
   position: relative;
 
@@ -34,7 +34,7 @@
 
 @media (max-width: 800px) {
   .Home {
-    background-position: 80% 100%;
+    background-position: 75% 100%;
     display: flex;
 
     .title-container {

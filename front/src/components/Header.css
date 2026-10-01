@@ -1,11 +1,19 @@
-.header {
-  display: flex;
-  align-items: center;
-  margin: 0 20px;
-  font-size: small;
-  top: 0px;
+.header-container {
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.85) 45%,
+    rgba(0, 0, 0, 0.55) 75%,
+    rgba(0, 0, 0, 0) 100%
+  );
   position: sticky;
   z-index: 1000;
+  top: 0px;
+}
+.header {
+  margin: 0 20px;
+  display: flex;
+  align-items: center;
+  font-size: small;
 
   a:first-child {
     display: flex;
@@ -20,7 +28,6 @@
     display: flex;
     align-items: center;
     gap: 20px;
-
   }
 
   .menu-button {
@@ -61,7 +68,6 @@
       left: 0;
       right: 0;
 
-
       display: flex;
       flex-direction: column;
       gap: 20px;
@@ -79,7 +85,6 @@
       transform: translateY(0);
       opacity: 1;
       pointer-events: auto;
-
     }
   }
 }
